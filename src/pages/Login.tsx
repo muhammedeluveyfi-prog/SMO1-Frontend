@@ -56,6 +56,37 @@ export default function Login() {
             {loading ? 'جاري تسجيل الدخول...' : 'تسجيل الدخول'}
           </button>
         </form>
+        
+        <div className="login-features">
+          <div className="feature-item">
+            <div className="feature-icon">🚚</div>
+            <div className="feature-text">
+              <h3>تتبع الطلبات</h3>
+              <p>تتبع حالة الطلبات في الوقت الفعلي</p>
+            </div>
+          </div>
+          <div className="feature-item">
+            <div className="feature-icon">📦</div>
+            <div className="feature-text">
+              <h3>إدارة الطلبات</h3>
+              <p>إدارة شاملة لجميع الطلبات</p>
+            </div>
+          </div>
+          <div className="feature-item">
+            <div className="feature-icon">👥</div>
+            <div className="feature-text">
+              <h3>إدارة المستخدمين</h3>
+              <p>إدارة الموظفين والموصلين</p>
+            </div>
+          </div>
+          <div className="feature-item">
+            <div className="feature-icon">⚡</div>
+            <div className="feature-text">
+              <h3>سرعة الأداء</h3>
+              <p>نظام سريع وموثوق</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
