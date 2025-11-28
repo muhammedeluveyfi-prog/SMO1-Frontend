@@ -56,11 +56,6 @@ export default function Login() {
             {loading ? 'جاري تسجيل الدخول...' : 'تسجيل الدخول'}
           </button>
         </form>
-        <div className="login-info">
-          <p>الحساب الافتراضي:</p>
-          <p>اسم المستخدم: <strong>admin</strong></p>
-          <p>كلمة المرور: <strong>admin123</strong></p>
-        </div>
       </div>
     </div>
   );
