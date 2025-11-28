@@ -1,0 +1,67 @@
+.create-order {
+  width: 100%;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.create-order h1 {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: 'Cairo', sans-serif;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.service-fields {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 3px solid #e5e7eb;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  padding: 28px;
+  border-radius: 16px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.service-fields h3 {
+  margin-bottom: 24px;
+  color: #1f2937;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Cairo', sans-serif;
+}
+
+.help-text {
+  color: #6b7280;
+  font-size: 13px;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  justify-content: flex-end;
+  padding-top: 24px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.error-message {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  border: 2px solid #fca5a5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+

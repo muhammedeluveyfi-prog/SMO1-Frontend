@@ -1,0 +1,25 @@
+.users-page {
+  width: 100%;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.users-page h1 {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: 'Cairo', sans-serif;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: flex-end;
+  padding-top: 24px;
+  border-top: 2px solid #e5e7eb;
+}
+
