@@ -1,5 +1,11 @@
-const requireEnv = (value: string | undefined, name: string) => {
+const requireEnv = (value: string | undefined, name: string, defaultValue?: string) => {
   if (!value) {
+    // In development, use default value if provided
+    if (import.meta.env.DEV && defaultValue) {
+      console.warn(`Missing environment variable: ${name}. Using default value for development.`);
+      return defaultValue;
+    }
+    
     console.error(`Missing environment variable: ${name}`);
     // In production, show a user-friendly error instead of crashing
     if (import.meta.env.PROD) {
@@ -31,13 +37,14 @@ const {
 } = import.meta.env;
 
 // Firebase configuration (values must be supplied via Vite env vars)
+// In development, use placeholder values if not provided
 export const firebaseConfig = {
-  apiKey: requireEnv(VITE_FIREBASE_API_KEY, 'VITE_FIREBASE_API_KEY'),
-  authDomain: requireEnv(VITE_FIREBASE_AUTH_DOMAIN, 'VITE_FIREBASE_AUTH_DOMAIN'),
-  projectId: requireEnv(VITE_FIREBASE_PROJECT_ID, 'VITE_FIREBASE_PROJECT_ID'),
-  storageBucket: requireEnv(VITE_FIREBASE_STORAGE_BUCKET, 'VITE_FIREBASE_STORAGE_BUCKET'),
-  messagingSenderId: requireEnv(VITE_FIREBASE_MESSAGING_SENDER_ID, 'VITE_FIREBASE_MESSAGING_SENDER_ID'),
-  appId: requireEnv(VITE_FIREBASE_APP_ID, 'VITE_FIREBASE_APP_ID'),
+  apiKey: requireEnv(VITE_FIREBASE_API_KEY, 'VITE_FIREBASE_API_KEY', 'dev-api-key'),
+  authDomain: requireEnv(VITE_FIREBASE_AUTH_DOMAIN, 'VITE_FIREBASE_AUTH_DOMAIN', 'dev-project.firebaseapp.com'),
+  projectId: requireEnv(VITE_FIREBASE_PROJECT_ID, 'VITE_FIREBASE_PROJECT_ID', 'dev-project'),
+  storageBucket: requireEnv(VITE_FIREBASE_STORAGE_BUCKET, 'VITE_FIREBASE_STORAGE_BUCKET', 'dev-project.appspot.com'),
+  messagingSenderId: requireEnv(VITE_FIREBASE_MESSAGING_SENDER_ID, 'VITE_FIREBASE_MESSAGING_SENDER_ID', '000000000000'),
+  appId: requireEnv(VITE_FIREBASE_APP_ID, 'VITE_FIREBASE_APP_ID', '1:000000000000:web:0000000000000000000000'),
   measurementId: VITE_FIREBASE_MEASUREMENT_ID
 };
 
